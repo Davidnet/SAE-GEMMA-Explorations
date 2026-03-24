@@ -44,7 +44,7 @@ for idx, (token_id, token_raw) in enumerate(zip(ids, tokens_raw)):
     )
     print(f"{idx:>3} | {token_id:>8} | {repr(token_raw):<24} | {repr(token_decoded)}")
 
-print("total tokens:", len(ids)
+print("total tokens:", len(ids))
 
 
 WIDTH = "16k"
@@ -162,11 +162,11 @@ logit_effects = example_data["logit_effects"]
 activations = activations[feature_id]
 n_acts = (activations > 0).sum().item()
 
-print(seq_ids.shape)
+# print(seq_ids.shape)
 seq_ids = seq_ids[feature_id][:n_acts]
-print(positions.shape)
+# print(positions.shape)
 positions = positions[feature_id][:n_acts]
-print(logit_effects.shape)
+# print(logit_effects.shape)
 logit_effects = logit_effects[feature_id][:n_acts]
 
 max_logit_effect = np.abs(logit_effects).max().item()
